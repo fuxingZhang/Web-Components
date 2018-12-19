@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>webcomponent</title>
+</head>
+
+<body>
+	<div>
+		<hellow-world></hellow-world>
+	</div>
+	<div>
+		<hellow-world img="img/hi.png" text="hi , i am text"/>
+	</div>
+</body>
+<script type="module">
+	// https://ponyfoo.com/articles/es6-modules-in-depth
+
+	/** 1 */
+	import helloword from './components/helloword.js'
+
+	/** 2 */
+	// import { helloword } from './components/helloword.js'
+
+	/** 3 */
+	// import { helloword, name } from './components/helloword.js'
+	// console.log(name)
+
+	/** 4 */
+	// right
+	// import helloword from './components/helloword.js'
+
+	// right
+	// import helloword, {name} from './components/helloword.js'
+	// console.log(name)
+
+	// error
+	// import { helloword } from './components/helloword.js'
+
+	/** use "*"  */
+	// import * as component from './components/helloword.js'
+	// console.log(component)  // odule {Symbol(Symbol.toStringTag): "Module"}
+	// console.log(component.default)  // OK
+	// console.log(component.name)    // OK
+	// console.log(component.helloword)  // undefined
+	// window.customElements.define('hellow-world', component.default);
+
+	// default
+	window.customElements.define('hellow-world', helloword);
+</script>
+
+</html>
