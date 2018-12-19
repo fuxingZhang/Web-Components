@@ -1,16 +1,16 @@
 # Web-Components
 show how Web Components work
 
-## instruction 
+## Instructions 
 
 1. the main code is in folder '/public'  
 2. use node.js for Web Components do not support "file://" protocol  
 
-## run  
+## Run  
 
 > node app  
 
-## open browser  
+## Open browser  
 
 > open localhost:3000  
 
