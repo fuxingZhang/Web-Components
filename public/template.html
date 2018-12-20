@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>template</title>
+  <style>
+		table {
+			background: #000;
+		}
+		table td {
+			background: #fff;
+		}
+	</style>
+</head>
+<body>
+  <table id="producttable">
+    <thead>
+      <tr>
+        <td>UPC_Code</td>
+        <td>Product_Name</td>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- existing data could optionally be included here -->
+    </tbody>
+  </table>
+  
+  <template id="productrow">
+    <tr>
+      <td class="record"></td>
+      <td></td>
+    </tr>
+  </template> 
+</body>
+<script>
+  if ('content' in document.createElement('template')) {
+
+  // Instantiate the table with the existing HTML tbody
+  // and the row with the template
+  var t = document.querySelector('#productrow');
+
+  // Clone the new row and insert it into the table
+  var tb = document.querySelector("tbody");
+  var clone = document.importNode(t.content, true);
+  td = clone.querySelectorAll("td");
+  td[0].textContent = "1235646565";
+  td[1].textContent = "Stuff";
+
+  tb.appendChild(clone);
+
+  // Clone the new row and insert it into the table
+  var clone2 = document.importNode(t.content, true);
+  td = clone2.querySelectorAll("td");
+  td[0].textContent = "0384928528";
+  td[1].textContent = "Acme Kidney Beans 2";
+
+  tb.appendChild(clone2);
+
+  } else {
+  // Find another way to add the rows to the table because 
+  // the HTML template element is not supported.
+  }
+</script>
+</html>
