@@ -38,9 +38,7 @@
   if ('content' in document.createElement('template')) {
 
   const t = document.querySelector('#productrow');
-  const template = document
-        .getElementById('element-details-template')
-        .content;
+  const template = document.querySelector('#productrow').content;
 
   const tb = document.querySelector("tbody");
   // const clone = document.importNode(t.content, true);
